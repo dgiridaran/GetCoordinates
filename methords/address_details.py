@@ -17,9 +17,9 @@ class Address:
 
     def get_address_coordinates(self):
         if type(self.address) != str:
-            return {"error":f"Address Cannot Be {type(self.address)}"}, 400
+            return {"error":"Invalid Address"}, 400
         if type(self.output_format) != str:
-            return {"error":f"Output Format Cannot Be {type(self.output_format)}"}, 400
+            return {"error":"Invalid Output Format"}, 400
         if self.output_format not in Address.valid_outputformat:
             return {"error":f"Output Format must be with in  {Address.valid_outputformat}"}, 400
         params = {
